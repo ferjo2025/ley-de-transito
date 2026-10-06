@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Texto modelo de 4 párrafos en tercera persona y ejercicios para memorizarlo.">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<title>La Ley de Tránsito · Práctica de redacción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Overpass+Mono:wght@500;600&family=Overpass:wght@400;600;700;800;900&display=swap">
+<style>
+/* Layout: rótulo verde de carretera como portada; pestañas fijas sobre una línea de carril amarilla; hojas de cuaderno con un margen donde viven los 4 dibujos de los párrafos */
+:root{
+  --bg:#E7EAE7;
+  --surface:#FFFFFF;
+  --surface-2:#F1F4F1;
+  --ink:#151A1D;
+  --muted:#535E62;
+  --line:#C9D0CC;
+  --rule:#D8E1EB;
+  --margin-line:#E2A0A0;
+  --sign:#0A6A3B;
+  --sign-ink:#FFFFFF;
+  --sign-rule:rgba(255,255,255,.5);
+  --yellow:#F4B400;
+  --pict:#14181A;
+  --mark:#FFE27A;
+  --go:#17894B;
+  --go-soft:#DCF1E4;
+  --wait:#B37800;
+  --wait-soft:#FBEDC2;
+  --stop:#C3342A;
+  --stop-soft:#F9DEDA;
+  --housing:#22282C;
+  --housing-ink:#E9EDEA;
+  --lamp-off:#3A4348;
+  --lamp-go:#2BD46F;
+  --lamp-wait:#FFC21A;
+  --lamp-stop:#FF4A3D;
+  --shadow:rgba(20,26,29,.10);
+  --focus:#1662C4;
+  --f-display:"Overpass","Arial Narrow",Arial,system-ui,sans-serif;
+  --f-read:"Atkinson Hyperlegible",Verdana,system-ui,sans-serif;
+  --f-mono:"Overpass Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1214;--surface:#181D20;--surface-2:#1F2629;--ink:#E7ECE9;--muted:#9AA5A8;--line:#2D363A;--rule:#24303A;--margin-line:#7D4343;
+    --sign:#0A5A33;--mark:rgba(244,190,40,.30);--go:#41C77E;--go-soft:rgba(65,199,126,.15);--wait:#F0B53A;--wait-soft:rgba(240,181,58,.17);
+    --stop:#F4705F;--stop-soft:rgba(244,112,95,.17);--housing:#0A0D0E;--lamp-off:#283034;--shadow:rgba(0,0,0,.35);--focus:#86B7FF;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1214;--surface:#181D20;--surface-2:#1F2629;--ink:#E7ECE9;--muted:#9AA5A8;--line:#2D363A;--rule:#24303A;--margin-line:#7D4343;
+  --sign:#0A5A33;--mark:rgba(244,190,40,.30);--go:#41C77E;--go-soft:rgba(65,199,126,.15);--wait:#F0B53A;--wait-soft:rgba(240,181,58,.17);
+  --stop:#F4705F;--stop-soft:rgba(244,112,95,.17);--housing:#0A0D0E;--lamp-off:#283034;--shadow:rgba(0,0,0,.35);--focus:#86B7FF;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-display);font-size:16px;line-height:1.5}
+h1,h2,h3{text-wrap:balance}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.wrap{max-width:940px;margin:0 auto;padding-inline:16px;padding-block:16px 64px}
+
+/* ---------- Rótulo ---------- */
+.sign{display:flex;align-items:center;gap:18px;background:var(--sign);color:var(--sign-ink);border-radius:16px;padding:22px 26px 20px;
+  box-shadow:inset 0 0 0 5px var(--sign),inset 0 0 0 8px var(--sign-ink),0 2px 0 var(--shadow)}
+.sign-text{flex:1 1 auto;min-width:0}
+.sign-kicker{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.sign h1{margin:0;font-weight:800;font-size:clamp(31px,7.4vw,48px);line-height:1.04;letter-spacing:-.005em}
+.sign-specs{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;row-gap:4px;font-weight:700;font-size:15px}
+.sign-specs li{padding-inline:12px;border-left:2px solid var(--sign-rule)}
+.sign-specs li:first-child{padding-left:0;border-left:0}
+.sign-arrow{flex:none;width:64px;height:64px}
+@media (max-width:520px){.sign{padding:18px 20px 16px;gap:12px}.sign-arrow{width:42px;height:42px}.sign-specs{font-size:14px}.sign-specs li{padding-inline:9px}}
+@media (max-width:440px){.sign-arrow{display:none}}
+
+/* ---------- Pestañas ---------- */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;margin:14px -16px 0;padding:0 16px;background:var(--bg)}
+.tabs::after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:3px;z-index:0;
+  background:repeating-linear-gradient(90deg,var(--yellow) 0 24px,transparent 24px 40px)}
+.tab{position:relative;z-index:1;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;gap:8px;
+  border:0;background:transparent;padding:14px 4px 13px;cursor:pointer;white-space:nowrap;
+  font-weight:700;font-size:clamp(14px,3.9vw,16px);color:var(--muted)}
+.tab[aria-selected="true"]{color:var(--ink)}
+.tab[aria-selected="true"]::after{content:"";position:absolute;left:6px;right:6px;bottom:0;height:6px;border-radius:2px 2px 0 0;background:var(--yellow)}
+.tab .num{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:2px solid currentColor;font-size:12px;font-weight:800;line-height:1}
+.tab[aria-selected="true"] .num{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+@media (max-width:430px){.tab .num{display:none}}
+
+/* ---------- Paneles y piezas comunes ---------- */
+.panel{display:grid;gap:18px;padding-top:22px}
+.intro{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px}
+.lead{margin:0;flex:1 1 320px;min-width:0;max-width:62ch;font-size:17px;line-height:1.5}
+.leyenda{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:14px;color:var(--muted)}
+.nota{margin:0;font-size:14.5px;color:var(--muted);max-width:70ch}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:9px 16px;border:2px solid var(--ink);border-radius:8px;
+  background:transparent;color:var(--ink);font-weight:700;font-size:15px;line-height:1.2;cursor:pointer}
+.btn.primario{background:var(--ink);color:var(--surface)}
+.btn.suave{border-color:var(--line);background:var(--surface)}
+.btn.mini{min-height:36px;padding:6px 12px;font-size:14px}
+.btn.alerta{border-color:var(--stop);color:var(--stop);background:var(--stop-soft)}
+.btn:disabled{opacity:.42;cursor:default}
+.btn svg{flex:none}
+.btn-voz{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:4px 9px;border:0;border-radius:6px;background:transparent;
+  color:var(--muted);font-weight:700;font-size:14px;cursor:pointer}
+.btn-voz:hover{color:var(--ink)}
+.btn-voz[aria-pressed="true"],.btn[aria-pressed="true"]{background:var(--mark);color:var(--ink)}
+
+/* Rombos: señal preventiva amarilla con el dibujo de cada párrafo */
+.rombo{--s:42px;position:relative;flex:none;display:grid;place-items:center;width:var(--s);height:var(--s)}
+.rombo::before{content:"";position:absolute;inset:14.6%;background:var(--yellow);border:2px solid var(--pict);border-radius:4px;transform:rotate(45deg)}
+.rombo svg{position:relative;width:52%;height:52%;color:var(--pict)}
+.rombo.md{--s:36px}
+.rombo.sm{--s:28px}
+.rombo.sm::before{border-width:1.5px}
+
+/* Hoja de cuaderno */
+.hoja{--mg:70px;position:relative;display:grid;gap:22px;padding-block:24px 24px;padding-inline:0 24px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--r)}
+.hoja::before{content:"";position:absolute;top:0;bottom:0;left:var(--mg);border-left:2px solid var(--margin-line)}
+.hoja-titulo{margin:0;padding-left:var(--mg);text-align:center;font-family:var(--f-read);font-weight:700;font-size:22px;line-height:1.3}
+.parr{display:grid;grid-template-columns:var(--mg) minmax(0,1fr);align-items:start}
+.parr-margen{display:flex;justify-content:center}
+.parr-cuerpo{min-width:0;padding-left:18px}
+.parr-cab{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2px 10px;min-height:34px}
+.etq{font-size:12.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.cab-der{display:inline-flex;align-items:center;gap:6px}
+.cuenta{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.texto{margin:4px 0 0;font-family:var(--f-read);font-size:19px;line-height:1.75;text-indent:2em}
+.hoja-pie{margin:0;padding-left:calc(var(--mg) + 18px);font-size:14px;color:var(--muted)}
+@media (max-width:540px){
+  .hoja{--mg:50px;padding-inline:0 16px}
+  .parr-cuerpo{padding-left:12px}
+  .hoja-pie{padding-left:calc(var(--mg) + 12px)}
+  .rombo{--s:36px}
+  .texto{font-size:17.5px;text-indent:1.6em}
+}
+mark.clave{background:var(--mark);color:inherit;border-radius:3px;padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+strong.conector{font-weight:700}
+
+/* Cajas de apoyo */
+.caja{min-width:0;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.caja h3{margin:0;font-size:18px;font-weight:800;line-height:1.25}
+.caja-sub{margin:4px 0 0;font-size:15px;color:var(--muted)}
+.cajas2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
+.esq{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:560px){.esq{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:880px){.esq{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.esq li{display:flex;align-items:center;gap:12px;min-width:0;padding:10px 12px;border-radius:8px;background:var(--surface-2)}
+.esq-txt{min-width:0}
+.esq-n{display:block;font-weight:800;font-size:15px;line-height:1.3}
+.esq-a{display:block;font-family:var(--f-read);font-size:15px;line-height:1.35;color:var(--muted)}
+.truco{margin:12px 0 0;font-size:15.5px;max-width:78ch}
+.si-no{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.si-no-t{margin:0;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.si-no-t.si{color:var(--go)}
+.si-no-t.no{color:var(--stop)}
+.si-no ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-family:var(--f-read);font-size:15.5px}
+.ejemplo{margin:14px 0 0;padding:10px 12px;border-radius:8px;background:var(--surface-2);font-family:var(--f-read);font-size:15.5px;line-height:1.6}
+.ejemplo s{color:var(--stop);text-decoration-thickness:2px}
+.ejemplo .ok{color:var(--go);font-weight:700;font-family:var(--f-display)}
+.tildes{margin:4px 0 0}
+.tildes dt{margin-top:12px;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tildes dd{margin:2px 0 0;font-family:var(--f-read);font-size:16.5px;line-height:1.45}
+
+/* ---------- Memorizar ---------- */
+.selector{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:6px 12px 6px 6px;border:2px solid var(--line);border-radius:8px;
+  background:var(--surface);font-weight:700;font-size:15px;line-height:1.2;cursor:pointer}
+.chip.sin-icono{padding-left:12px}
+.chip[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 -4px 0 var(--yellow)}
+.chip-n{font-family:var(--f-mono);font-weight:600;margin-right:2px}
+.dots{display:inline-flex;gap:3px;margin-left:2px}
+.dots i{display:block;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line)}
+.dots i.ok[data-l="verde"]{background:var(--go);border-color:var(--go)}
+.dots i.ok[data-l="amarillo"]{background:var(--wait);border-color:var(--wait)}
+.dots i.ok[data-l="rojo"]{background:var(--stop);border-color:var(--stop)}
+
+.control-nivel{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.semaforo{display:flex;gap:4px;padding:10px;border-radius:20px;background:var(--housing);box-shadow:0 3px 0 var(--shadow)}
+.lampara{display:grid;justify-items:center;gap:7px;min-width:74px;padding:4px 6px 4px;border:0;border-radius:12px;background:transparent;
+  color:var(--housing-ink);cursor:pointer}
+.luz{position:relative;width:48px;height:48px;border-radius:50%;background:var(--lamp-off);box-shadow:inset 0 3px 7px rgba(0,0,0,.5);
+  transition:background-color .2s ease,box-shadow .2s ease}
+.luz::before{content:"";position:absolute;left:-5px;right:-5px;top:-6px;height:24px;border-radius:30px 30px 0 0;border-top:5px solid rgba(0,0,0,.55)}
+.lampara[aria-pressed="true"][data-nivel="verde"] .luz{background:var(--lamp-go);box-shadow:0 0 22px var(--lamp-go),inset 0 -4px 8px rgba(0,0,0,.18)}
+.lampara[aria-pressed="true"][data-nivel="amarillo"] .luz{background:var(--lamp-wait);box-shadow:0 0 22px var(--lamp-wait),inset 0 -4px 8px rgba(0,0,0,.18)}
+.lampara[aria-pressed="true"][data-nivel="rojo"] .luz{background:var(--lamp-stop);box-shadow:0 0 22px var(--lamp-stop),inset 0 -4px 8px rgba(0,0,0,.18)}
+.lab{font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;text-align:center}
+.lab small{display:block;margin-top:2px;font-size:12px;font-weight:600;letter-spacing:0;text-transform:none;opacity:.78}
+.lampara[aria-pressed="false"] .lab{opacity:.62}
+.nivel-info{flex:1 1 260px;min-width:0}
+.nivel-info h3{margin:0;font-size:20px;font-weight:800}
+.nivel-info p{margin:4px 0 0;font-size:15.5px}
+.nivel-info .meta{color:var(--muted)}
+
+.hoja.mem .texto{line-height:2.15}
+.palabra{white-space:nowrap}
+.hueco{display:inline-block;vertical-align:-.2em;min-width:calc(var(--n) * .56em + .35em);height:1.32em;margin:0;padding:0 .22em;
+  border:0;border-bottom:3px solid var(--muted);border-radius:5px 5px 0 0;background:var(--surface-2);
+  font-family:var(--f-read);font-size:inherit;line-height:1.32em;color:var(--muted);text-align:left;text-indent:0;cursor:pointer}
+.hueco:hover{border-bottom-color:var(--ink);color:var(--ink)}
+.revelada{border-radius:4px 4px 0 0;padding:0 .1em;background:var(--wait-soft);box-shadow:inset 0 -3px 0 var(--wait)}
+.acierto{border-radius:4px 4px 0 0;padding:0 .1em;background:var(--go-soft);box-shadow:inset 0 -3px 0 var(--go)}
+.era-oculta{box-shadow:inset 0 -2px 0 var(--muted)}
+
+.acciones{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.pistas{margin-right:auto;font-size:15px;color:var(--muted)}
+.pistas b{margin-left:6px;font-family:var(--f-mono);font-size:22px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.feedback{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:12px 14px;border-radius:8px;font-size:16px;background:var(--surface-2)}
+.feedback:empty{display:none}
+.feedback.ok{background:var(--go-soft)}
+.feedback.ojo{background:var(--stop-soft)}
+.feedback > span{flex:1 1 240px;min-width:0}
+
+/* ---------- Escribir ---------- */
+.barra{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px}
+.crono{display:flex;align-items:center;gap:8px}
+.crono-t{min-width:4.4ch;font-family:var(--f-mono);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.contadores{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:15px;color:var(--muted)}
+.contadores b{font-family:var(--f-mono);font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;margin-left:4px}
+#escrito{--lh:34px;display:block;width:100%;min-height:440px;resize:vertical;margin:0;
+  padding:var(--lh) 18px 18px 66px;border:1px solid var(--line);border-radius:var(--r);
+  background-color:var(--surface);color:var(--ink);font-family:var(--f-read);font-size:19px;line-height:var(--lh);
+  background-image:linear-gradient(90deg,transparent 50px,var(--margin-line) 50px,var(--margin-line) 52px,transparent 52px),
+    repeating-linear-gradient(180deg,transparent 0,transparent calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px),var(--rule) var(--lh));
+  background-attachment:local;background-position:0 0}
+#escrito::placeholder{color:var(--muted);opacity:1}
+@media (max-width:540px){#escrito{--lh:32px;font-size:17.5px;padding-left:60px;min-height:380px}}
+
+.resultado{display:grid;gap:14px}
+.res-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.pct{font-family:var(--f-mono);font-weight:600;font-size:54px;line-height:1;font-variant-numeric:tabular-nums}
+.pct small{font-size:26px}
+.res-txt{flex:1 1 220px;min-width:0}
+.res-frase{margin:0;font-size:20px;font-weight:800;line-height:1.25}
+.res-sub{margin:4px 0 0;font-size:15.5px;color:var(--muted)}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.check{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);font-size:15.5px}
+.check .ico{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;font-weight:900;font-size:15px;line-height:1}
+.check.ok .ico{background:var(--go-soft);color:var(--go)}
+.check.ojo .ico{background:var(--stop-soft);color:var(--stop)}
+.check.info .ico{background:var(--surface-2);color:var(--muted)}
+.check p{margin:3px 0 0}
+.cambio{display:inline-block;margin:4px 8px 0 0;padding:1px 8px;border-radius:6px;background:var(--surface-2);font-family:var(--f-read);white-space:nowrap}
+.cambio s{color:var(--stop);text-decoration-thickness:2px}
+.res-orig{display:grid;gap:8px}
+.res-orig h3{margin:6px 0 0;font-size:18px;font-weight:800}
+.m-falta{border-radius:3px;padding:0 .1em;background:var(--stop-soft);box-shadow:inset 0 -2px 0 var(--stop)}
+.m-tilde{border-radius:3px;padding:0 .1em;background:var(--wait-soft);box-shadow:inset 0 -2px 0 var(--wait)}
+
+/* ---------- Plan ---------- */
+.plan-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));align-items:start}
+.dia{padding:18px 18px 6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.dia h2{margin:0;font-size:24px;font-weight:800;line-height:1.15}
+.fecha{display:block;margin-top:2px;font-size:14.5px;font-weight:600;color:var(--muted)}
+.sesiones{list-style:none;margin:12px 0 0;padding:0}
+.sesion{padding:13px 0;border-top:1px solid var(--line)}
+.sesion label{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:10px;align-items:center;cursor:pointer}
+.sesion input{width:22px;height:22px;margin:0;accent-color:var(--go)}
+.s-tit{font-size:17px;font-weight:800;line-height:1.25}
+.s-num{margin-right:7px;font-family:var(--f-mono);font-weight:600;color:var(--muted)}
+.s-dur{font-family:var(--f-mono);font-size:13px;color:var(--muted);white-space:nowrap}
+.sesion ul{margin:6px 0 0 36px;padding:0 0 0 18px;font-size:15.5px;line-height:1.5}
+.sesion ul li+li{margin-top:3px}
+.s-por{margin:6px 0 0 36px;font-size:14px;font-style:italic;color:var(--muted)}
+.sesion.hecha .s-tit{text-decoration:line-through;text-decoration-thickness:2px;color:var(--muted)}
+.caja ul.lista{margin:10px 0 0;padding:0 0 0 20px;font-size:15.5px;line-height:1.5}
+.caja ul.lista li+li{margin-top:5px}
+.caja .sesion{border-top:0;padding-bottom:4px}
+
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="sign">
+    <div class="sign-text">
+      <p class="sign-kicker">Práctica de redacción</p>
+      <h1>La Ley de Tránsito</h1>
+      <ul class="sign-specs" aria-label="Lo que pide la prueba">
+        <li>4 párrafos</li><li>200 palabras</li><li>Tercera persona</li>
+      </ul>
+    </div>
+    <svg class="sign-arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 35 35 13M17 13h18v18" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Pasos de la práctica">
+    <button class="tab" role="tab" id="tab-leer" data-tab="leer" aria-controls="leer" aria-selected="true"><span class="num">1</span>Leer</button>
+    <button class="tab" role="tab" id="tab-memorizar" data-tab="memorizar" aria-controls="memorizar" aria-selected="false" tabindex="-1"><span class="num">2</span>Memorizar</button>
+    <button class="tab" role="tab" id="tab-escribir" data-tab="escribir" aria-controls="escribir" aria-selected="false" tabindex="-1"><span class="num">3</span>Escribir</button>
+    <button class="tab" role="tab" id="tab-plan" data-tab="plan" aria-controls="plan" aria-selected="false" tabindex="-1">Plan</button>
+  </nav>
+
+  <main>
+    <!-- 1 · LEER -->
+    <section class="panel" id="leer" role="tabpanel" aria-labelledby="tab-leer">
+      <div class="intro">
+        <p class="lead">Primero entenderlo, después memorizarlo. Leelo en voz alta dos veces y explicá con tus palabras de qué trata cada párrafo.</p>
+        <button class="btn suave" type="button" id="vozTodo" data-voz="todo" data-label="Escuchar todo" aria-pressed="false" hidden></button>
+      </div>
+      <p class="leyenda"><mark class="clave">Amarillo</mark> palabras clave <span aria-hidden="true">·</span> <strong class="conector">Negrita</strong> palabras que unen ideas</p>
+      <article class="hoja" id="hojaLeer" aria-label="Texto modelo"></article>
+
+      <section class="caja" aria-labelledby="h-esq">
+        <h3 id="h-esq">El esqueleto</h3>
+        <p class="caja-sub">Es el mapa del texto. Aprendelo antes que todo lo demás: un dibujo y un arranque para cada párrafo.</p>
+        <ol class="esq" id="esq"></ol>
+        <p class="truco"><b>Truco:</b> el párrafo 1 nombra a los personajes en el mismo orden en que aparecen después: conductores y pasajeros (párrafo 2), peatones y ciclistas (párrafo 3).</p>
+        <p class="truco"><b>La historia de los dibujos:</b> la ley pone las reglas, el carro pasa, el peatón cruza y todos llegan a su destino.</p>
+      </section>
+
+      <div class="cajas2">
+        <section class="caja" aria-labelledby="h-3p">
+          <h3 id="h-3p">Todo en tercera persona</h3>
+          <p class="caja-sub">El texto habla de otros: los conductores, los peatones, las personas. Nunca de “yo” ni de “nosotros”.</p>
+          <div class="si-no">
+            <div>
+              <p class="si-no-t si"><span aria-hidden="true">✓</span> Sí</p>
+              <ul><li>los conductores deben</li><li>los peatones tienen que</li><li>cada persona</li><li>todos</li></ul>
+            </div>
+            <div>
+              <p class="si-no-t no"><span aria-hidden="true">✗</span> No</p>
+              <ul><li>yo, nosotros</li><li>debemos, tenemos</li><li>mi, nuestro</li><li>tú, usted, vos</li></ul>
+            </div>
+          </div>
+          <p class="ejemplo"><s>Debemos usar el cinturón.</s><br><span class="ok" aria-hidden="true">✓</span> Las personas deben usar el cinturón.</p>
+        </section>
+
+        <section class="caja" aria-labelledby="h-tildes">
+          <h3 id="h-tildes">Ojo con las tildes</h3>
+          <dl class="tildes">
+            <dt>Esdrújulas: siempre llevan tilde</dt>
+            <dd>tránsito · semáforo · límites</dd>
+            <dt>Agudas que terminan en n, s o vocal</dt>
+            <dd>además · también · cinturón · conclusión · están · está · demás</dd>
+            <dt>Otras</dt>
+            <dd>cómo · más · vía</dd>
+            <dt>Mayúsculas</dt>
+            <dd>Costa Rica y Ley de Tránsito, porque es el nombre de la ley. Pero “señales de tránsito” va en minúscula.</dd>
+          </dl>
+        </section>
+      </div>
+    </section>
+
+    <!-- 2 · MEMORIZAR -->
+    <section class="panel" id="memorizar" role="tabpanel" aria-labelledby="tab-memorizar" hidden>
+      <p class="lead">Un párrafo a la vez. Empezá en verde y subí de nivel cuando lo digás con 2 pistas o menos. Los puntos de cada botón muestran lo que ya está listo.</p>
+      <div class="selector" id="selMem" aria-label="Qué practicar"></div>
+      <div class="control-nivel">
+        <div class="semaforo" aria-label="Nivel">
+          <button class="lampara" type="button" data-nivel="verde" aria-pressed="true"><span class="luz"></span><span class="lab">Verde<small>fácil</small></span></button>
+          <button class="lampara" type="button" data-nivel="amarillo" aria-pressed="false"><span class="luz"></span><span class="lab">Amarillo<small>medio</small></span></button>
+          <button class="lampara" type="button" data-nivel="rojo" aria-pressed="false"><span class="luz"></span><span class="lab">Rojo<small>difícil</small></span></button>
+        </div>
+        <div class="nivel-info">
+          <h3 id="nivTit">Verde · fácil</h3>
+          <p id="nivTxt">Se esconde 1 de cada 4 palabras.</p>
+          <p>Leé en voz alta y decí las palabras que faltan. Si no te acordás de una, tocala para verla: cuenta como pista.</p>
+          <p class="meta" id="nivMeta">Meta: 2 pistas o menos.</p>
+        </div>
+      </div>
+      <article class="hoja mem" id="hojaMem" aria-label="Texto con palabras escondidas"></article>
+      <div class="acciones">
+        <span class="pistas">Pistas<b id="pistas">0</b></span>
+        <button class="btn suave" type="button" id="otraVez">Otra vez</button>
+        <button class="btn suave" type="button" id="mostrar">Mostrar todo</button>
+        <button class="btn primario" type="button" id="termine">Terminé</button>
+      </div>
+      <p class="feedback" id="fbMem" aria-live="polite"></p>
+    </section>
+
+    <!-- 3 · ESCRIBIR -->
+    <section class="panel" id="escribir" role="tabpanel" aria-labelledby="tab-escribir" hidden>
+      <p class="lead">Escribilo de memoria, sin mirar, y tocá Revisar. Vas a ver qué palabras faltaron, las tildes y si todo quedó en tercera persona.</p>
+      <div class="selector" id="selEsc" aria-label="Qué escribir"></div>
+      <div class="barra">
+        <div class="crono">
+          <span class="crono-t" id="crono" role="timer" aria-label="Cronómetro">00:00</span>
+          <button class="btn suave mini" type="button" id="cronoBtn">Iniciar</button>
+          <button class="btn suave mini" type="button" id="cronoReset">Reiniciar</button>
+        </div>
+        <div class="contadores" aria-live="off">
+          <span>Palabras<b id="cPal">0</b> / <span id="cMeta">200</span></span>
+          <span id="cParrWrap">Párrafos<b id="cParr">0</b> / 4</span>
+        </div>
+      </div>
+      <label class="sr" for="escrito">Texto escrito de memoria</label>
+      <textarea id="escrito" spellcheck="false" autocorrect="off" autocapitalize="off" autocomplete="off"
+        placeholder="Escribí aquí, sin mirar. Poné el título en la primera línea y dejá un Enter entre párrafos."></textarea>
+      <div class="acciones">
+        <button class="btn primario" type="button" id="revisar">Revisar</button>
+        <button class="btn suave" type="button" id="borrar">Borrar</button>
+      </div>
+      <p class="nota">El simulacro final hacelo a mano en una hoja, como en la prueba. Usá el cronómetro de aquí y después corregí con la pestaña Leer.</p>
+      <p class="feedback" id="fbEsc" aria-live="polite"></p>
+
+      <section class="resultado" id="resultado" aria-labelledby="h-res" hidden>
+        <h2 class="sr" id="h-res">Resultado</h2>
+        <div class="res-top">
+          <div class="pct"><span id="rPct">0</span><small>%</small></div>
+          <div class="res-txt">
+            <p class="res-frase" id="rFrase"></p>
+            <p class="res-sub" id="rSub"></p>
+          </div>
+          <button class="btn mini" type="button" id="rPracticar" hidden></button>
+        </div>
+        <ul class="checks" id="rChecks"></ul>
+        <div class="res-orig">
+          <h3>Así era el texto</h3>
+          <p class="leyenda"><span class="m-falta">Rojo</span> faltó <span aria-hidden="true">·</span> <span class="m-tilde">Amarillo</span> revisar la tilde</p>
+          <article class="hoja" id="rTexto" aria-label="Texto modelo con las palabras que faltaron"></article>
+        </div>
+      </section>
+    </section>
+
+    <!-- PLAN -->
+    <section class="panel" id="plan" role="tabpanel" aria-labelledby="tab-plan" hidden>
+      <p class="lead">Sesiones cortas repartidas en dos días, con el sueño de por medio: así se queda mucho mejor que estudiando todo de una vez. Marcá cada sesión cuando la terminés.</p>
+      <div class="plan-grid">
+        <section class="dia" aria-labelledby="h-d1">
+          <h2 id="h-d1">Día 1 <span class="fecha">martes 6 de octubre</span></h2>
+          <ol class="sesiones">
+            <li class="sesion">
+              <label><input type="checkbox" id="s1"><span class="s-tit"><span class="s-num">1</span>Entender</span><span class="s-dur">15 min</span></label>
+              <ul>
+                <li>Leer el texto en voz alta dos veces. Una puede ser con el botón Escuchar.</li>
+                <li>Explicarle a alguien de la casa de qué trata cada párrafo, con sus propias palabras.</li>
+                <li>Dibujar en una hoja los 4 símbolos: libro, carro, peatón y bandera.</li>
+              </ul>
+            </li>
+            <li class="sesion">
+              <label><input type="checkbox" id="s2"><span class="s-tit"><span class="s-num">2</span>Párrafos 1 y 2</span><span class="s-dur">25 min</span></label>
+              <ul>
+                <li>En Memorizar: párrafo 1 en verde, amarillo y rojo.</li>
+                <li>Descanso corto, unos 5 minutos.</li>
+                <li>Lo mismo con el párrafo 2.</li>
+                <li>Al final, decir los párrafos 1 y 2 seguidos, sin mirar.</li>
+              </ul>
+            </li>
+            <li class="sesion">
+              <label><input type="checkbox" id="s3"><span class="s-tit"><span class="s-num">3</span>Antes de dormir</span><span class="s-dur">10 min</span></label>
+              <ul>
+                <li>Leer los 4 párrafos una vez, en voz alta.</li>
+                <li>Decir de memoria los párrafos 1 y 2.</li>
+              </ul>
+              <p class="s-por">Lo que se repasa antes de dormir se fija mientras se duerme.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="dia" aria-labelledby="h-d2">
+          <h2 id="h-d2">Día 2 <span class="fecha">miércoles 7 de octubre</span></h2>
+          <ol class="sesiones">
+            <li class="sesion">
+              <label><input type="checkbox" id="s4"><span class="s-tit"><span class="s-num">4</span>Al despertar</span><span class="s-dur">5 min</span></label>
+              <ul><li>Decir los párrafos 1 y 2 sin mirar y revisar qué se olvidó.</li></ul>
+            </li>
+            <li class="sesion">
+              <label><input type="checkbox" id="s5"><span class="s-tit"><span class="s-num">5</span>Párrafos 3 y 4</span><span class="s-dur">25 min</span></label>
+              <ul>
+                <li>En Memorizar: párrafo 3 y párrafo 4, cada uno en verde, amarillo y rojo.</li>
+                <li>Después, Todo el texto en rojo.</li>
+              </ul>
+            </li>
+            <li class="sesion">
+              <label><input type="checkbox" id="s6"><span class="s-tit"><span class="s-num">6</span>Simulacro</span><span class="s-dur">30 min</span></label>
+              <ul>
+                <li>Escribir todo a mano en una hoja, sin mirar, con el cronómetro.</li>
+                <li>Corregir con lapicero rojo: palabras que faltan, tildes y tercera persona.</li>
+                <li>Volver a practicar solo las partes que fallaron.</li>
+              </ul>
+            </li>
+            <li class="sesion">
+              <label><input type="checkbox" id="s7"><span class="s-tit"><span class="s-num">7</span>Antes de dormir</span><span class="s-dur">10 min</span></label>
+              <ul><li>Decir el texto completo en voz alta a mamá o papá.</li></ul>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <div class="cajas2">
+        <section class="caja" aria-labelledby="h-prueba">
+          <h3 id="h-prueba">El día de la prueba</h3>
+          <div class="sesion">
+            <label><input type="checkbox" id="s8"><span class="s-tit"><span class="s-num">8</span>Repaso rápido</span><span class="s-dur">5 min</span></label>
+            <ul><li>Repasar solo el esqueleto: los 4 dibujos y cómo empieza cada párrafo. Nada nuevo.</li></ul>
+          </div>
+          <ul class="lista">
+            <li>Si dejan hacer borrador, anotar primero los 4 dibujos o las 4 ideas en una esquina.</li>
+            <li>Título centrado, sangría al empezar cada párrafo y mayúscula al inicio y después de cada punto.</li>
+            <li>Si se olvida una oración, escribir la idea con sus palabras, siempre en tercera persona. Nunca dejar un párrafo a medias.</li>
+            <li>Al final, leer todo una vez buscando “yo”, “nosotros” o “debemos”, revisar las tildes y contar los 4 párrafos.</li>
+          </ul>
+        </section>
+        <section class="caja" aria-labelledby="h-papas">
+          <h3 id="h-papas">Para quien le toma la lección</h3>
+          <ul class="lista">
+            <li>Dejarlo terminar el párrafo antes de corregir.</li>
+            <li>Primero decirle lo que recordó bien; después, lo que faltó.</li>
+            <li>Si se traba siempre en la misma frase, que la escriba tres veces y la diga en voz alta.</li>
+            <li>Varias sesiones cortas rinden más que una larga. A los 25 minutos, descanso.</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(() => {
+'use strict';
+
+/* ===== CORE-START ===== */
+const TITULO = 'La Ley de Tránsito';
+const META = 200;
+const PARRAFOS = [
+  { n: 1, nombre: 'La ley', icono: 'libro', arranque: 'En Costa Rica, la Ley de Tránsito…',
+    texto: 'En Costa Rica, la [Ley de Tránsito] establece las normas para usar las calles y carreteras de forma ordenada y segura. Esta ley explica cómo deben comportarse los [conductores], los [pasajeros], los [peatones] y los [ciclistas]. Su objetivo principal es [prevenir accidentes] y [proteger la vida] de todas las personas.' },
+  { n: 2, nombre: 'Conductores', icono: 'carro', arranque: 'Por un lado, los conductores…',
+    texto: '{Por un lado}, los conductores deben respetar las [señales de tránsito], los [semáforos] y los [límites de velocidad]. {Además}, el conductor y todos los pasajeros deben usar el [cinturón de seguridad]. Los motociclistas están obligados a usar [casco]. {También} está prohibido manejar bajo los efectos del [alcohol] o usar el [celular] mientras se conduce.' },
+  { n: 3, nombre: 'Peatones y ciclistas', icono: 'peaton', arranque: 'Por otro lado, los peatones…',
+    texto: '{Por otro lado}, los peatones deben esperar la [luz verde] del semáforo y cruzar la calle por el [paso peatonal]. Antes de cruzar, tienen que [mirar a ambos lados] y no distraerse con el celular. Los ciclistas, {por su parte}, deben usar [casco] y circular por la [orilla derecha] de la vía.' },
+  { n: 4, nombre: 'Conclusión', icono: 'bandera', arranque: 'En conclusión, la Ley de Tránsito…',
+    texto: '{En conclusión}, la Ley de Tránsito es muy importante porque [salva vidas]. Quienes no la cumplen pueden recibir [multas], {pero} lo más grave es que ponen en [peligro] su vida y la de los demás. {Por eso}, respetarla es [responsabilidad de todos], para que cada persona llegue [sana y salva] a su [destino].' }
+];
+
+const LETRAS = /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+/g;
+const plano = s => s.replace(/[[\]{}]/g, '');
+const palabras = s => s.match(LETRAS) || [];
+const norm = w => w.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+function tokens(texto) {
+  return texto.split(/\s+/).filter(Boolean).map(chunk => {
+    const m = chunk.match(/^([¿¡"“«(]*)([A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)(.*)$/);
+    return m ? { pre: m[1], w: m[2], post: m[3] } : { pre: '', w: '', post: chunk };
+  });
+}
+
+/* Tercera persona: palabras de 1.ª y 2.ª persona que delatan el cambio */
+const PRIMERA = new Set(['yo','me','mi','mis','conmigo','mio','mia','mios','mias','nosotros','nosotras','nos','nuestro','nuestra','nuestros','nuestras',
+  'somos','soy','estoy','voy','creo','pienso','opino','considero','quiero','debo','tengo','puedo']);
+const SEGUNDA = new Set(['tu','tus','te','ti','contigo','tuyo','tuya','tuyos','tuyas','usted','ustedes','vos','debes','tienes','puedes','sabes','eres',
+  'vas','haces','usas','cruzas','respetas','manejas','miras','tenes','podes','sos','queres','fijate','acordate']);
+const NO_VERBOS = new Set(['ultimos','proximos','minimos','maximos','intimos','legitimos','optimos','pesimos','centimos','animos','primos','extremos',
+  'supremos','ramos','tramos','reclamos','remos','gramos','kilogramos','projimos','racimos','anonimos','sinonimos','unanimos']);
+const SUGERENCIA = {
+  yo: 'quitarlo', me: 'se', mi: 'su', mis: 'sus', nosotros: 'ellos', nosotras: 'ellas', nos: 'se', nuestro: 'su', nuestra: 'su',
+  nuestros: 'sus', nuestras: 'sus', somos: 'son', soy: 'es', estoy: 'está', voy: 'va', debo: 'debe', tengo: 'tiene', puedo: 'puede',
+  creo: 'quitar la opinión', pienso: 'quitar la opinión', opino: 'quitar la opinión', considero: 'quitar la opinión',
+  estamos: 'están', vamos: 'van', debemos: 'deben', tenemos: 'tienen', podemos: 'pueden', sabemos: 'saben', hacemos: 'hacen',
+  queremos: 'quieren', usamos: 'usan', respetamos: 'respetan', cruzamos: 'cruzan', cumplimos: 'cumplen', vivimos: 'viven',
+  conducimos: 'conducen', manejamos: 'manejan', necesitamos: 'necesitan', cuidamos: 'cuidan', evitamos: 'evitan', miramos: 'miran',
+  esperamos: 'esperan', caminamos: 'caminan', viajamos: 'viajan', tomamos: 'toman', ponemos: 'ponen', seguimos: 'siguen',
+  tu: 'su / la persona', tus: 'sus', te: 'se', ti: 'él o ella', usted: 'la persona', ustedes: 'las personas', vos: 'la persona',
+  debes: 'debe', tienes: 'tiene', puedes: 'puede', sabes: 'sabe', eres: 'es', vas: 'va', tenes: 'tiene', podes: 'puede', sos: 'es'
+};
+
+function revisarPersona(texto) {
+  const vistas = new Map();
+  for (const w of palabras(texto)) {
+    const n = norm(w);
+    const verboNosotros = n.length > 4 && /[aei]mos$/.test(n) && !NO_VERBOS.has(n) && !/isimos$/.test(n);
+    if ((PRIMERA.has(n) || SEGUNDA.has(n) || verboNosotros) && !vistas.has(n)) {
+      vistas.set(n, { palabra: w.toLowerCase(), cambio: SUGERENCIA[n] || null });
+    }
+  }
+  return [...vistas.values()];
+}
+
+/* Comparación palabra por palabra (subsecuencia común más larga) */
+function comparar(original, escrito) {
+  const A = palabras(original), B = palabras(escrito);
+  const a = A.map(norm), b = B.map(norm);
+  const n = a.length, m = b.length;
+  const dp = [];
+  for (let i = 0; i <= n; i++) dp.push(new Uint16Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) {
+    for (let j = m - 1; j >= 0; j--) {
+      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    }
+  }
+  const match = new Array(n).fill(-1);
+  let i = 0, j = 0;
+  while (i < n && j < m) {
+    if (a[i] === b[j]) { match[i] = j; i++; j++; }
+    else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+    else j++;
+  }
+  const tildeIdx = [], tildes = [], vistos = new Set();
+  match.forEach((jj, ii) => {
+    if (jj < 0) return;
+    if (A[ii].toLowerCase() !== B[jj].toLowerCase()) {
+      tildeIdx.push(ii);
+      const k = B[jj].toLowerCase() + '>' + A[ii].toLowerCase();
+      if (!vistos.has(k)) { vistos.add(k); tildes.push({ escrito: B[jj], bien: A[ii] }); }
+    }
+  });
+  return { total: n, escritas: m, recordadas: match.filter(x => x >= 0).length, match, tildeIdx, tildes };
+}
+
+/* Título (primera línea corta sin punto) y párrafos (separados por Enter) */
+function estructura(texto, conTitulo) {
+  const lineas = texto.split(/\n+/).map(s => s.trim()).filter(Boolean);
+  let titulo = null;
+  if (conTitulo && lineas.length > 1 && palabras(lineas[0]).length <= 7 && !/[.!?]$/.test(lineas[0])) titulo = lineas.shift();
+  return { titulo, parrafos: lineas, cuerpo: lineas.join('\n') };
+}
+
+function revisarMayusculas(texto) {
+  const avisos = [];
+  const re = /(^|[.!?]\s+)([a-záéíóúñü][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]*)/gm;
+  let m, veces = 0;
+  const ejemplos = [];
+  while ((m = re.exec(texto))) { veces++; if (ejemplos.length < 2) ejemplos.push(m[2]); }
+  if (veces) avisos.push({ tipo: 'punto', veces, ejemplos });
+  if (/costa\s+rica/i.test(texto) && !/Costa\s+Rica/.test(texto)) avisos.push({ tipo: 'nombre', nombre: 'Costa Rica' });
+  const reLey = /\b(ley)\s+de\s+(tr[aá]nsito)/gi;
+  while ((m = reLey.exec(texto))) {
+    if (m[1] !== 'Ley' || m[2][0] !== 'T') { avisos.push({ tipo: 'nombre', nombre: 'Ley de Tránsito' }); break; }
+  }
+  return avisos;
+}
+
+/* Elige qué palabras esconder; las largas se esconden más que las cortas */
+function elegirOcultas(lista, nivel, azar) {
+  azar = azar || Math.random;
+  if (nivel === 'rojo') return new Set(lista.map(t => t.key));
+  const cuantas = Math.max(1, Math.round(lista.length * (nivel === 'verde' ? 0.25 : 0.5)));
+  return new Set(lista.map(t => ({ key: t.key, r: azar() * (t.w.length >= 4 ? 1 : 0.35) }))
+    .sort((x, y) => y.r - x.r).slice(0, cuantas).map(t => t.key));
+}
+/* ===== CORE-END ===== */
+
+/* ---------- utilidades ---------- */
+const $ = (s, el) => (el || document).querySelector(s);
+const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+const K = { tab: 'mlt.tab', prog: 'mlt.progreso', mem: 'mlt.mem', plan: 'mlt.plan', escModo: 'mlt.escModo', draft: 'mlt.borrador.' };
+
+const ICONOS = {
+  libro: '<path d="M12 6.5C9.6 5 6.6 4.6 3.5 5.3v13c3.1-.7 6.1-.3 8.5 1.2 2.4-1.5 5.4-1.9 8.5-1.2v-13c-3.1-.7-6.1-.3-8.5 1.2zM12 6.5v13"/>',
+  carro: '<path d="M3 16.5v-3.2L5.6 9h8.2l3.3 4.3h2.4c.8 0 1.5.7 1.5 1.5v1.7M3.2 13.3H17M9.8 9v4.3M9.2 16.8h5.6M3 16.5h2.2M18.8 16.8H21"/><circle cx="7.2" cy="16.8" r="2"/><circle cx="16.8" cy="16.8" r="2"/>',
+  peaton: '<circle cx="13" cy="4.3" r="2"/><path d="M12.4 8.2l-2.2 6.3-2.6 6.5M10.2 14.5l3.6 2.7 1.3 3.8M12.4 8.2l3.8 3.2M12.4 8.2 9 10.6l-1.6 2.9"/>',
+  bandera: '<path d="M6.5 21V3.5M6.5 4.5h11l-2.6 3.6 2.6 3.6h-11"/>'
+};
+const ICONO_VOZ = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>';
+const svgIcono = nombre => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS[nombre]}</svg>`;
+const rombo = (icono, cls) => `<span class="rombo ${cls || ''}" aria-hidden="true">${svgIcono(icono)}</span>`;
+const marcado = s => esc(s).replace(/\[([^\]]+)\]/g, '<mark class="clave">$1</mark>').replace(/\{([^}]+)\}/g, '<strong class="conector">$1</strong>');
+const cuantas = p => palabras(plano(p.texto)).length;
+const TOTAL = PARRAFOS.reduce((s, p) => s + cuantas(p), 0);
+
+/* ---------- pestañas ---------- */
+const TABS = ['leer', 'memorizar', 'escribir', 'plan'];
+function abrirTab(id, foco) {
+  if (!TABS.includes(id)) id = 'leer';
+  TABS.forEach(t => {
+    const b = $('#tab-' + t), on = t === id;
+    b.setAttribute('aria-selected', String(on));
+    b.tabIndex = on ? 0 : -1;
+    $('#' + t).hidden = !on;
+  });
+  store.set(K.tab, id);
+  pararVoz();
+  if (foco) $('#tab-' + id).focus();
+  const nav = $('.tabs');
+  const tope = nav.offsetTop;
+  if (window.scrollY > tope) window.scrollTo({ top: tope, behavior: 'auto' });
+}
+$$('.tab').forEach(b => {
+  b.addEventListener('click', () => abrirTab(b.dataset.tab));
+  b.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    e.preventDefault();
+    const i = TABS.indexOf(b.dataset.tab);
+    abrirTab(TABS[(i + (e.key === 'ArrowRight' ? 1 : -1) + TABS.length) % TABS.length], true);
+  });
+});
+
+/* ---------- voz ---------- */
+const VOZ_OK = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+let voz = null, vozBtn = null, sesionVoz = 0;
+function elegirVoz() {
+  try {
+    const pref = ['es-CR', 'es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES'];
+    const rango = v => { const i = pref.indexOf(v.lang.replace('_', '-')); return i < 0 ? 50 : i; };
+    const vs = speechSynthesis.getVoices().filter(v => /^es([-_]|$)/i.test(v.lang)).sort((x, y) => rango(x) - rango(y));
+    voz = vs[0] || null;
+  } catch (e) { voz = null; }
+}
+function etiquetaVoz(btn, activo) {
+  btn.setAttribute('aria-pressed', String(activo));
+  btn.innerHTML = ICONO_VOZ + '<span>' + (activo ? 'Detener' : (btn.dataset.label || 'Escuchar')) + '</span>';
+}
+function pararVoz() {
+  if (!VOZ_OK) return;
+  sesionVoz++;
+  try { speechSynthesis.cancel(); } catch (e) {}
+  if (vozBtn) { etiquetaVoz(vozBtn, false); vozBtn = null; }
+}
+function hablar(texto, btn) {
+  if (!VOZ_OK) return;
+  const mismo = vozBtn === btn;
+  pararVoz();
+  if (mismo) return;
+  const id = sesionVoz;
+  const frases = texto.match(/[^.!?]+[.!?]*/g) || [texto];
+  vozBtn = btn;
+  etiquetaVoz(btn, true);
+  frases.forEach((f, i) => {
+    const u = new SpeechSynthesisUtterance(f.trim());
+    u.lang = voz ? voz.lang : 'es-MX';
+    if (voz) u.voice = voz;
+    u.rate = 0.9;
+    const fin = () => { if (sesionVoz === id) pararVoz(); };
+    if (i === frases.length - 1) u.onend = fin;
+    u.onerror = fin;
+    try { speechSynthesis.speak(u); } catch (e) { fin(); }
+  });
+}
+
+/* ---------- 1 · Leer ---------- */
+function renderLeer() {
+  const h = [`<h2 class="hoja-titulo">${esc(TITULO)}</h2>`];
+  PARRAFOS.forEach(p => {
+    h.push(`<div class="parr"><div class="parr-margen">${rombo(p.icono)}</div><div class="parr-cuerpo">
+      <div class="parr-cab"><span class="etq">Párrafo ${p.n} · ${esc(p.nombre)}</span>
+      <span class="cab-der"><span class="cuenta">${cuantas(p)} palabras</span><button class="btn-voz" type="button" data-voz="${p.n}" data-label="Escuchar" aria-pressed="false" hidden></button></span></div>
+      <p class="texto">${marcado(p.texto)}</p></div></div>`);
+  });
+  h.push(`<p class="hoja-pie">${TOTAL} palabras en total: un poco más de 200 a propósito, para que llegue aunque se le olvide alguna.</p>`);
+  $('#hojaLeer').innerHTML = h.join('');
+  $('#esq').innerHTML = PARRAFOS.map(p => `<li>${rombo(p.icono, 'md')}<span class="esq-txt"><span class="esq-n">${p.n} · ${esc(p.nombre)}</span><span class="esq-a">“${esc(p.arranque)}”</span></span></li>`).join('');
+  $$('[data-voz]').forEach(b => { etiquetaVoz(b, false); b.hidden = !VOZ_OK; });
+}
+$('#leer').addEventListener('click', e => {
+  const b = e.target.closest('[data-voz]');
+  if (!b) return;
+  const v = b.dataset.voz;
+  const texto = v === 'todo' ? TITULO + '. ' + PARRAFOS.map(p => plano(p.texto)).join(' ') : plano(PARRAFOS[+v - 1].texto);
+  hablar(texto, b);
+});
+
+/* ---------- 2 · Memorizar ---------- */
+const NIVELES = ['verde', 'amarillo', 'rojo'];
+const NIVEL_INFO = {
+  verde: { tit: 'Verde · fácil', txt: 'Se esconde 1 de cada 4 palabras.' },
+  amarillo: { tit: 'Amarillo · medio', txt: 'Se esconde la mitad de las palabras.' },
+  rojo: { tit: 'Rojo · difícil', txt: 'Solo ves la primera letra de cada palabra.' }
+};
+const guardado = store.get(K.mem, {});
+let progreso = store.get(K.prog, {});
+const mem = {
+  p: ['1', '2', '3', '4', 'todo'].includes(guardado.p) ? guardado.p : '1',
+  nivel: NIVELES.includes(guardado.nivel) ? guardado.nivel : 'verde',
+  ocultas: new Set(), reveladas: new Set(), pistas: 0, fin: null
+};
+const parrafosDe = p => p === 'todo' ? PARRAFOS : [PARRAFOS[+p - 1]];
+const limite = p => p === 'todo' ? 6 : 2;
+const nombreModo = p => p === 'todo' ? 'Todo el texto' : 'Párrafo ' + p;
+const listos = p => NIVELES.filter(l => progreso[p] && progreso[p][l]);
+
+function chips(cont, actual, conPuntos) {
+  const items = PARRAFOS.map(p => ({ id: String(p.n), html: `${rombo(p.icono, 'sm')}<span><span class="chip-n">${p.n}</span> ${esc(p.nombre)}</span>`, nombre: 'Párrafo ' + p.n + ', ' + p.nombre }))
+    .concat([{ id: 'todo', html: '<span>Todo el texto</span>', nombre: 'Todo el texto', sinIcono: true }]);
+  cont.innerHTML = items.map(it => {
+    const hechos = conPuntos ? listos(it.id) : [];
+    const puntos = conPuntos ? `<span class="dots" aria-hidden="true">${NIVELES.map(l => `<i data-l="${l}" class="${hechos.includes(l) ? 'ok' : ''}"></i>`).join('')}</span>` : '';
+    const etiqueta = it.nombre + (conPuntos ? (hechos.length ? '. Listo en ' + hechos.join(', ') : '. Sin practicar') : '');
+    return `<button class="chip${it.sinIcono ? ' sin-icono' : ''}" type="button" data-p="${it.id}" aria-pressed="${it.id === actual}" aria-label="${esc(etiqueta)}">${it.html}${puntos}</button>`;
+  }).join('');
+}
+function renderNivel() {
+  $$('.lampara').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.nivel === mem.nivel)));
+  $('#nivTit').textContent = NIVEL_INFO[mem.nivel].tit;
+  $('#nivTxt').textContent = NIVEL_INFO[mem.nivel].txt;
+  $('#nivMeta').textContent = `Meta: ${limite(mem.p)} pistas o menos.`;
+}
+function renderMem() {
+  let orden = 0;
+  const h = parrafosDe(mem.p).map(p => {
+    const toks = tokens(plano(p.texto)).map((t, i) => {
+      const key = p.n + '-' + i;
+      let w = esc(t.w);
+      if (mem.ocultas.has(key)) {
+        if (mem.reveladas.has(key)) w = `<span class="revelada">${esc(t.w)}</span>`;
+        else if (mem.fin === 'terminado') w = `<span class="acierto">${esc(t.w)}</span>`;
+        else if (mem.fin === 'mostrado') w = `<span class="era-oculta">${esc(t.w)}</span>`;
+        else {
+          const letra = mem.nivel === 'rojo' ? esc(t.w[0]) : '';
+          w = `<button class="hueco" type="button" data-k="${key}" data-o="${orden++}" style="--n:${t.w.length}" aria-label="Palabra escondida${letra ? ' que empieza con ' + letra : ''}. Tocá para verla.">${letra}</button>`;
+        }
+      }
+      return `<span class="palabra">${esc(t.pre)}${w}${esc(t.post)}</span>`;
+    }).join(' ');
+    return `<div class="parr"><div class="parr-margen">${rombo(p.icono)}</div><div class="parr-cuerpo"><div class="parr-cab"><span class="etq">Párrafo ${p.n} · ${esc(p.nombre)}</span></div><p class="texto">${toks}</p></div></div>`;
+  });
+  $('#hojaMem').innerHTML = h.join('');
+  $('#pistas').textContent = mem.pistas;
+}
+function nuevaRonda() {
+  mem.reveladas = new Set(); mem.pistas = 0; mem.fin = null;
+  const lista = [];
+  parrafosDe(mem.p).forEach(p => tokens(plano(p.texto)).forEach((t, i) => { if (t.w) lista.push({ key: p.n + '-' + i, w: t.w }); }));
+  mem.ocultas = elegirOcultas(lista, mem.nivel);
+  store.set(K.mem, { p: mem.p, nivel: mem.nivel });
+  renderNivel(); renderMem();
+  feedback($('#fbMem'));
+  $('#termine').disabled = false; $('#mostrar').disabled = false;
+}
+function elegirParrafo(p) {
+  mem.p = p;
+  const pend = NIVELES.find(l => !(progreso[p] && progreso[p][l]));
+  mem.nivel = pend || 'rojo';
+  chips($('#selMem'), mem.p, true);
+  nuevaRonda();
+}
+function elegirNivel(n) { mem.nivel = n; nuevaRonda(); }
+function feedback(el, tipo, html, accion) {
+  if (!html) { el.className = 'feedback'; el.innerHTML = ''; return; }
+  el.className = 'feedback ' + (tipo || '');
+  el.innerHTML = `<span>${html}</span>` + (accion ? `<button class="btn mini" type="button">${esc(accion.label)}</button>` : '');
+  if (accion) el.querySelector('button').addEventListener('click', accion.ir);
+}
+function siguiente(p, nivel) {
+  const i = NIVELES.indexOf(nivel);
+  if (i < 2) { const nv = NIVELES[i + 1]; return { txt: `Ahora probá el ${nv}.`, label: 'Pasar al ' + nv, ir: () => elegirNivel(nv) }; }
+  if (p !== 'todo' && +p < 4) { const q = String(+p + 1); return { txt: `Decilo una vez sin mirar nada. Después seguí con el párrafo ${q}.`, label: 'Ir al párrafo ' + q, ir: () => elegirParrafo(q) }; }
+  if (p === '4') return { txt: 'Decilo una vez sin mirar nada. Después probá todo el texto junto.', label: 'Todo el texto', ir: () => elegirParrafo('todo') };
+  return { txt: 'Ya podés escribirlo completo de memoria.', label: 'Ir a Escribir', ir: () => abrirTab('escribir') };
+}
+
+$('#selMem').addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) elegirParrafo(b.dataset.p); });
+$$('.lampara').forEach(b => b.addEventListener('click', () => elegirNivel(b.dataset.nivel)));
+$('#hojaMem').addEventListener('click', e => {
+  const b = e.target.closest('.hueco');
+  if (!b) return;
+  const o = +b.dataset.o;
+  mem.reveladas.add(b.dataset.k);
+  mem.pistas++;
+  renderMem();
+  const sig = $$('.hueco', $('#hojaMem')).find(x => +x.dataset.o > o);
+  if (sig && e.detail === 0) sig.focus();
+});
+$('#otraVez').addEventListener('click', nuevaRonda);
+$('#mostrar').addEventListener('click', () => {
+  if (mem.fin) return;
+  mem.fin = 'mostrado';
+  renderMem();
+  $('#termine').disabled = true; $('#mostrar').disabled = true;
+  feedback($('#fbMem'), '', 'Ahí está completo. Comparalo con lo que dijiste y tocá <b>Otra vez</b> para practicarlo de nuevo.');
+});
+$('#termine').addEventListener('click', () => {
+  if (mem.fin) return;
+  mem.fin = 'terminado';
+  const ok = mem.pistas <= limite(mem.p);
+  if (ok) {
+    progreso[mem.p] = progreso[mem.p] || {};
+    progreso[mem.p][mem.nivel] = true;
+    store.set(K.prog, progreso);
+    chips($('#selMem'), mem.p, true);
+  }
+  renderMem();
+  $('#termine').disabled = true; $('#mostrar').disabled = true;
+  if (ok) {
+    const s = siguiente(mem.p, mem.nivel);
+    const pistasTxt = mem.pistas === 0 ? 'sin pistas' : `con ${mem.pistas} ${mem.pistas === 1 ? 'pista' : 'pistas'}`;
+    feedback($('#fbMem'), 'ok', `<b>¡Muy bien!</b> ${nombreModo(mem.p)} en ${mem.nivel}, ${pistasTxt}. ${s.txt}`, s);
+  } else {
+    feedback($('#fbMem'), 'ojo', `Usaste ${mem.pistas} pistas. Repetilo una vez más: la meta es ${limite(mem.p)} o menos.`, { label: 'Otra vez', ir: nuevaRonda });
+  }
+});
+
+/* ---------- 3 · Escribir ---------- */
+const ta = $('#escrito');
+let modoEsc = ['1', '2', '3', '4', 'todo'].includes(store.get(K.escModo)) ? store.get(K.escModo) : 'todo';
+const originalDe = modo => modo === 'todo' ? PARRAFOS.map(p => plano(p.texto)).join('\n') : plano(PARRAFOS[+modo - 1].texto);
+const metaDe = modo => modo === 'todo' ? META : cuantas(PARRAFOS[+modo - 1]);
+
+const crono = { acum: 0, inicio: 0, run: false, id: null };
+const fmt = ms => { const s = Math.floor(ms / 1000); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+function tickCrono() { $('#crono').textContent = fmt(crono.acum + (crono.run ? Date.now() - crono.inicio : 0)); }
+function iniciarCrono() { if (crono.run) return; crono.inicio = Date.now(); crono.run = true; crono.id = setInterval(tickCrono, 250); $('#cronoBtn').textContent = 'Pausar'; }
+function pausarCrono() { if (!crono.run) return; crono.acum += Date.now() - crono.inicio; crono.run = false; clearInterval(crono.id); tickCrono(); $('#cronoBtn').textContent = 'Seguir'; }
+function reiniciarCrono() { if (crono.run) { clearInterval(crono.id); crono.run = false; } crono.acum = 0; tickCrono(); $('#cronoBtn').textContent = 'Iniciar'; }
+$('#cronoBtn').addEventListener('click', () => crono.run ? pausarCrono() : iniciarCrono());
+$('#cronoReset').addEventListener('click', reiniciarCrono);
+
+function contadores() {
+  const est = estructura(ta.value, modoEsc === 'todo');
+  $('#cPal').textContent = palabras(est.cuerpo).length;
+  $('#cMeta').textContent = metaDe(modoEsc);
+  $('#cParrWrap').hidden = modoEsc !== 'todo';
+  $('#cParr').textContent = est.parrafos.length;
+}
+function cambiarModoEsc(modo) {
+  modoEsc = modo;
+  store.set(K.escModo, modo);
+  chips($('#selEsc'), modo, false);
+  ta.value = store.get(K.draft + modo, '');
+  $('#resultado').hidden = true;
+  feedback($('#fbEsc'));
+  reiniciarCrono();
+  contadores();
+}
+$('#selEsc').addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) cambiarModoEsc(b.dataset.p); });
+let guardarT = null;
+ta.addEventListener('input', () => {
+  contadores();
+  if (!crono.run && crono.acum === 0 && ta.value.trim()) iniciarCrono();
+  clearTimeout(guardarT);
+  guardarT = setTimeout(() => store.set(K.draft + modoEsc, ta.value), 400);
+});
+
+let borrarArmado = null;
+$('#borrar').addEventListener('click', () => {
+  const b = $('#borrar');
+  if (!borrarArmado) {
+    b.textContent = '¿Borrar todo? Tocá otra vez';
+    b.classList.add('alerta');
+    borrarArmado = setTimeout(() => { borrarArmado = null; b.textContent = 'Borrar'; b.classList.remove('alerta'); }, 3500);
+    return;
+  }
+  clearTimeout(borrarArmado); borrarArmado = null;
+  b.textContent = 'Borrar'; b.classList.remove('alerta');
+  ta.value = ''; store.set(K.draft + modoEsc, '');
+  $('#resultado').hidden = true; feedback($('#fbEsc'));
+  reiniciarCrono(); contadores(); ta.focus();
+});
+
+function check(tipo, html) {
+  const ico = { ok: '✓', ojo: '!', info: 'i' }[tipo];
+  return `<li class="check ${tipo}"><span class="ico" aria-hidden="true">${ico}</span><div>${html}</div></li>`;
+}
+$('#revisar').addEventListener('click', () => {
+  const texto = ta.value;
+  if (!palabras(texto).length) { feedback($('#fbEsc'), 'ojo', 'Primero escribí el texto de memoria; después tocá Revisar.'); return; }
+  feedback($('#fbEsc'));
+  pausarCrono();
+  const todo = modoEsc === 'todo';
+  const est = estructura(texto, todo);
+  const cmp = comparar(originalDe(modoEsc), est.cuerpo);
+  const pct = cmp.total ? Math.round(100 * cmp.recordadas / cmp.total) : 0;
+
+  $('#rPct').textContent = pct;
+  $('#rFrase').textContent = pct >= 95 ? '¡Listo para la prueba!' : pct >= 80 ? 'Muy cerca. Repasá las palabras en rojo.' : pct >= 50 ? 'Vas bien. Practicá más la parte con más rojo.' : 'Seguí en Memorizar, un párrafo a la vez.';
+  $('#rSub').textContent = `Recordaste ${cmp.recordadas} de ${cmp.total} palabras del texto${crono.acum ? ' en ' + fmt(crono.acum) : ''}.`;
+
+  // párrafo con más palabras olvidadas
+  const pr = $('#rPracticar');
+  pr.hidden = true;
+  if (pct < 95) {
+    let k = 0, peor = null, max = 0;
+    parrafosDeEsc().forEach(p => {
+      const n = cuantas(p); let faltan = 0;
+      for (let i = 0; i < n; i++) if (cmp.match[k + i] < 0) faltan++;
+      k += n;
+      if (faltan > max) { max = faltan; peor = p; }
+    });
+    if (peor) {
+      pr.hidden = false;
+      pr.textContent = 'Practicar el párrafo ' + peor.n;
+      pr.onclick = () => { abrirTab('memorizar'); elegirParrafo(String(peor.n)); };
+    }
+  }
+
+  const c = [];
+  const nPal = palabras(est.cuerpo).length;
+  if (todo) {
+    c.push(nPal >= META ? check('ok', `${nPal} palabras: llega a las ${META}.`) : check('ojo', `${nPal} palabras: faltan ${META - nPal} para llegar a ${META}.`));
+    const np = est.parrafos.length;
+    c.push(np === 4 ? check('ok', '4 párrafos.') : check('ojo', `${np} ${np === 1 ? 'párrafo' : 'párrafos'}. Tienen que ser 4: dejá un Enter entre párrafo y párrafo.`));
+    c.push(est.titulo ? check('ok', `Título: “${esc(est.titulo)}”.`) : check('info', 'Sin título. Si la maestra lo pide, va arriba y centrado.'));
+  } else {
+    c.push(check('info', `${nPal} palabras escritas; el párrafo tiene ${cmp.total}.`));
+  }
+  const persona = revisarPersona(texto);
+  c.push(persona.length
+    ? check('ojo', `Revisá la tercera persona:<p>${persona.map(x => `<span class="cambio"><s>${esc(x.palabra)}</s>${x.cambio ? ' → ' + esc(x.cambio) : ''}</span>`).join('')}</p>${persona.some(x => !x.cambio) ? '<p>Cambiá esos verbos a “ellos”: usamos → usan.</p>' : ''}`)
+    : check('ok', 'Todo en tercera persona.'));
+  c.push(cmp.tildes.length
+    ? check('ojo', `Tildes y ñ:<p>${cmp.tildes.map(t => `<span class="cambio"><s>${esc(t.escrito)}</s> → ${esc(t.bien)}</span>`).join('')}</p>`)
+    : check('ok', 'Tildes bien escritas.'));
+  const may = revisarMayusculas(texto);
+  if (may.length) {
+    const partes = may.map(a => a.tipo === 'punto'
+      ? `Falta mayúscula al empezar ${a.veces === 1 ? 'una oración' : a.veces + ' oraciones'} (por ejemplo: “${esc(a.ejemplos[0])}”).`
+      : `Escribí “${esc(a.nombre)}” con mayúsculas.`);
+    c.push(check('ojo', partes.join(' ')));
+  } else {
+    c.push(check('ok', 'Mayúsculas bien usadas.'));
+  }
+  $('#rChecks').innerHTML = c.join('');
+
+  // texto original con lo que faltó
+  const tIdx = new Set(cmp.tildeIdx);
+  let k = 0;
+  $('#rTexto').innerHTML = parrafosDeEsc().map(p => {
+    const toks = tokens(plano(p.texto)).map(t => {
+      const i = k++;
+      const cls = cmp.match[i] < 0 ? 'm-falta' : (tIdx.has(i) ? 'm-tilde' : '');
+      return `<span class="palabra">${esc(t.pre)}${cls ? `<span class="${cls}">${esc(t.w)}</span>` : esc(t.w)}${esc(t.post)}</span>`;
+    }).join(' ');
+    return `<div class="parr"><div class="parr-margen">${rombo(p.icono)}</div><div class="parr-cuerpo"><div class="parr-cab"><span class="etq">Párrafo ${p.n} · ${esc(p.nombre)}</span></div><p class="texto">${toks}</p></div></div>`;
+  }).join('');
+
+  const r = $('#resultado');
+  r.hidden = false;
+  r.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+});
+const parrafosDeEsc = () => modoEsc === 'todo' ? PARRAFOS : [PARRAFOS[+modoEsc - 1]];
+
+/* ---------- Plan ---------- */
+const plan = store.get(K.plan, {});
+$$('#plan input[type="checkbox"]').forEach(cb => {
+  const li = cb.closest('.sesion');
+  cb.checked = !!plan[cb.id];
+  if (li) li.classList.toggle('hecha', cb.checked);
+  cb.addEventListener('change', () => {
+    plan[cb.id] = cb.checked;
+    store.set(K.plan, plan);
+    if (li) li.classList.toggle('hecha', cb.checked);
+  });
+});
+
+/* ---------- arranque ---------- */
+renderLeer();
+chips($('#selMem'), mem.p, true);
+nuevaRonda();
+cambiarModoEsc(modoEsc);
+if (VOZ_OK) {
+  elegirVoz();
+  try { speechSynthesis.addEventListener('voiceschanged', elegirVoz); } catch (e) { speechSynthesis.onvoiceschanged = elegirVoz; }
+}
+const hash = (location.hash || '').replace('#', '');
+const inicial = TABS.includes(hash) ? hash : store.get(K.tab, 'leer');
+if (inicial !== 'leer') abrirTab(inicial);
+})();
+</script>
+
+</body>
+</html>
