@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <meta name="description" content="Texto modelo de 4 párrafos en tercera persona y ejercicios para memorizarlo.">
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
-<title>La Ley de Tránsito · Práctica de redacción</title>
+<title>El respeto a las señales de tránsito · Práctica</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Overpass+Mono:wght@500;600&family=Overpass:wght@400;600;700;800;900&display=swap">
@@ -289,7 +289,7 @@ strong.conector{font-weight:700}
   <header class="sign">
     <div class="sign-text">
       <p class="sign-kicker">Práctica de redacción</p>
-      <h1>La Ley de Tránsito</h1>
+      <h1>El respeto a las señales de tránsito</h1>
       <ul class="sign-specs" aria-label="Lo que pide la prueba">
         <li>4 párrafos</li><li>200 palabras</li><li>Tercera persona</li>
       </ul>
@@ -318,8 +318,9 @@ strong.conector{font-weight:700}
         <h3 id="h-esq">El esqueleto</h3>
         <p class="caja-sub">Es el mapa del texto. Aprendelo antes que todo lo demás: un dibujo y un arranque para cada párrafo.</p>
         <ol class="esq" id="esq"></ol>
-        <p class="truco"><b>Truco:</b> el párrafo 1 nombra a los personajes en el mismo orden en que aparecen después: conductores y pasajeros (párrafo 2), peatones y ciclistas (párrafo 3).</p>
-        <p class="truco"><b>La historia de los dibujos:</b> la ley pone las reglas, el carro pasa, el peatón cruza y todos llegan a su destino.</p>
+        <p class="truco"><b>Truco:</b> el párrafo 1 nombra las tres clases de señales: rótulos, semáforos y marcas. El párrafo 2 explica los rótulos, y el 3 cómo se respetan el semáforo y el paso peatonal, que es una marca.</p>
+        <p class="truco"><b>Los tres grupos de rótulos:</b> los que mandan (reglamentación, como el ALTO), los que avisan (preventivas, amarillas en forma de rombo) y los que orientan (informativas).</p>
+        <p class="truco"><b>La historia de los dibujos:</b> la señal está en la calle, el ALTO manda, el semáforo ordena y todos llegan a su destino.</p>
       </section>
 
       <div class="cajas2">
@@ -329,27 +330,27 @@ strong.conector{font-weight:700}
           <div class="si-no">
             <div>
               <p class="si-no-t si"><span aria-hidden="true">✓</span> Sí</p>
-              <ul><li>los conductores deben</li><li>los peatones tienen que</li><li>cada persona</li><li>todos</li></ul>
+              <ul><li>los conductores deben</li><li>los peatones deben</li><li>cada persona</li><li>todos</li></ul>
             </div>
             <div>
               <p class="si-no-t no"><span aria-hidden="true">✗</span> No</p>
-              <ul><li>yo, nosotros</li><li>debemos, tenemos</li><li>mi, nuestro</li><li>tú, usted, vos</li></ul>
+              <ul><li>yo, nosotros</li><li>debemos, respetamos</li><li>mi, nuestro</li><li>tú, usted, vos</li></ul>
             </div>
           </div>
-          <p class="ejemplo"><s>Debemos usar el cinturón.</s><br><span class="ok" aria-hidden="true">✓</span> Las personas deben usar el cinturón.</p>
+          <p class="ejemplo"><s>Debemos respetar el ALTO.</s><br><span class="ok" aria-hidden="true">✓</span> Los conductores deben respetar el ALTO.</p>
         </section>
 
         <section class="caja" aria-labelledby="h-tildes">
           <h3 id="h-tildes">Ojo con las tildes</h3>
           <dl class="tildes">
             <dt>Esdrújulas: siempre llevan tilde</dt>
-            <dd>tránsito · semáforo · límites</dd>
+            <dd>tránsito · rótulos · semáforo · máxima · último</dd>
             <dt>Agudas que terminan en n, s o vocal</dt>
-            <dd>además · también · cinturón · conclusión · están · está · demás</dd>
+            <dd>circulación · reglamentación · conclusión · está · así · demás</dd>
             <dt>Otras</dt>
-            <dd>cómo · más · vía</dd>
+            <dd>qué (en “saben qué deben hacer”) · más</dd>
             <dt>Mayúsculas</dt>
-            <dd>Costa Rica y Ley de Tránsito, porque es el nombre de la ley. Pero “señales de tránsito” va en minúscula.</dd>
+            <dd>ALTO va en mayúsculas, como está escrito en el rótulo. En cambio, “señales de tránsito” va en minúscula.</dd>
           </dl>
         </section>
       </div>
@@ -438,7 +439,7 @@ strong.conector{font-weight:700}
               <ul>
                 <li>Leer el texto en voz alta dos veces. Una puede ser con el botón Escuchar.</li>
                 <li>Explicarle a alguien de la casa de qué trata cada párrafo, con sus propias palabras.</li>
-                <li>Dibujar en una hoja los 4 símbolos: libro, carro, peatón y bandera.</li>
+                <li>Dibujar en una hoja los 4 símbolos: la señal en su poste, el ALTO, el semáforo y la bandera.</li>
               </ul>
             </li>
             <li class="sesion">
@@ -524,17 +525,17 @@ strong.conector{font-weight:700}
 'use strict';
 
 /* ===== CORE-START ===== */
-const TITULO = 'La Ley de Tránsito';
+const TITULO = 'El respeto a las señales de tránsito';
 const META = 200;
 const PARRAFOS = [
-  { n: 1, nombre: 'La ley', icono: 'libro', arranque: 'En Costa Rica, la Ley de Tránsito…',
-    texto: 'En Costa Rica, la [Ley de Tránsito] establece las normas para usar las calles y carreteras de forma ordenada y segura. Esta ley explica cómo deben comportarse los [conductores], los [pasajeros], los [peatones] y los [ciclistas]. Su objetivo principal es [prevenir accidentes] y [proteger la vida] de todas las personas.' },
-  { n: 2, nombre: 'Conductores', icono: 'carro', arranque: 'Por un lado, los conductores…',
-    texto: '{Por un lado}, los conductores deben respetar las [señales de tránsito], los [semáforos] y los [límites de velocidad]. {Además}, el conductor y todos los pasajeros deben usar el [cinturón de seguridad]. Los motociclistas están obligados a usar [casco]. {También} está prohibido manejar bajo los efectos del [alcohol] o usar el [celular] mientras se conduce.' },
-  { n: 3, nombre: 'Peatones y ciclistas', icono: 'peaton', arranque: 'Por otro lado, los peatones…',
-    texto: '{Por otro lado}, los peatones deben esperar la [luz verde] del semáforo y cruzar la calle por el [paso peatonal]. Antes de cruzar, tienen que [mirar a ambos lados] y no distraerse con el celular. Los ciclistas, {por su parte}, deben usar [casco] y circular por la [orilla derecha] de la vía.' },
-  { n: 4, nombre: 'Conclusión', icono: 'bandera', arranque: 'En conclusión, la Ley de Tránsito…',
-    texto: '{En conclusión}, la Ley de Tránsito es muy importante porque [salva vidas]. Quienes no la cumplen pueden recibir [multas], {pero} lo más grave es que ponen en [peligro] su vida y la de los demás. {Por eso}, respetarla es [responsabilidad de todos], para que cada persona llegue [sana y salva] a su [destino].' }
+  { n: 1, nombre: 'Qué son', icono: 'poste', arranque: 'Las señales de tránsito son rótulos, semáforos y marcas…',
+    texto: 'Las señales de tránsito son [rótulos], [semáforos] y [marcas] que se colocan en las calles y carreteras para [ordenar la circulación]. Gracias a ellas, los conductores y los peatones saben qué deben hacer en cada lugar. Su objetivo principal es [prevenir accidentes] y [proteger la vida] de todas las personas.' },
+  { n: 2, nombre: 'Tres grupos', icono: 'octagono', arranque: 'Los rótulos se dividen en tres grupos…',
+    texto: 'Los rótulos se dividen en [tres grupos]. Las señales de [reglamentación] indican lo que es obligatorio o prohibido, como el [ALTO] o la velocidad máxima. Las [preventivas], que son [amarillas] y tienen forma de [rombo], advierten peligros, como una curva o una zona escolar. {Por último}, las [informativas] orientan sobre lugares, distancias y servicios.' },
+  { n: 3, nombre: 'Respetarlas', icono: 'semaforo', arranque: 'Respetar las señales significa obedecerlas siempre…',
+    texto: 'Respetar las señales significa [obedecerlas siempre]. {Por un lado}, los conductores deben [detenerse por completo] ante el [ALTO] y cuando el semáforo está en [rojo]. {Por otro lado}, los peatones deben esperar la [luz verde] y cruzar la calle por el [paso peatonal]. {Así}, cada persona cumple su parte y todos circulan con [seguridad].' },
+  { n: 4, nombre: 'Conclusión', icono: 'bandera', arranque: 'En conclusión, respetar las señales de tránsito salva vidas…',
+    texto: '{En conclusión}, respetar las señales de tránsito [salva vidas]. Quienes no las obedecen pueden recibir [multas], {pero} lo más grave es que ponen en [peligro] su vida y la de los demás. {Por eso}, respetarlas es [responsabilidad de todos], para que cada persona llegue [sana y salva] a su [destino].' }
 ];
 
 const LETRAS = /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+/g;
@@ -653,9 +654,12 @@ const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
 };
-const K = { tab: 'mlt.tab', prog: 'mlt.progreso', mem: 'mlt.mem', plan: 'mlt.plan', escModo: 'mlt.escModo', draft: 'mlt.borrador.' };
+const K = { tab: 'mst.tab', prog: 'mst.progreso', mem: 'mst.mem', plan: 'mst.plan', escModo: 'mst.escModo', draft: 'mst.borrador.' };
 
 const ICONOS = {
+  poste: '<circle cx="12" cy="8.5" r="5.5"/><path d="M12 14v7.5M9 21.5h6"/>',
+  octagono: '<path d="M8.89 4.5H15.1L19.5 8.89V15.11L15.1 19.5H8.89L4.5 15.11V8.89Z"/><path d="M8.6 12h6.8"/>',
+  semaforo: '<rect x="8" y="2.5" width="8" height="19" rx="2.5"/><circle cx="12" cy="7" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="17" r="1.6"/>',
   libro: '<path d="M12 6.5C9.6 5 6.6 4.6 3.5 5.3v13c3.1-.7 6.1-.3 8.5 1.2 2.4-1.5 5.4-1.9 8.5-1.2v-13c-3.1-.7-6.1-.3-8.5 1.2zM12 6.5v13"/>',
   carro: '<path d="M3 16.5v-3.2L5.6 9h8.2l3.3 4.3h2.4c.8 0 1.5.7 1.5 1.5v1.7M3.2 13.3H17M9.8 9v4.3M9.2 16.8h5.6M3 16.5h2.2M18.8 16.8H21"/><circle cx="7.2" cy="16.8" r="2"/><circle cx="16.8" cy="16.8" r="2"/>',
   peaton: '<circle cx="13" cy="4.3" r="2"/><path d="M12.4 8.2l-2.2 6.3-2.6 6.5M10.2 14.5l3.6 2.7 1.3 3.8M12.4 8.2l3.8 3.2M12.4 8.2 9 10.6l-1.6 2.9"/>',
